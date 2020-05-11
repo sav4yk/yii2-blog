@@ -75,7 +75,6 @@ class Article extends \yii\db\ActiveRecord
 
     public function getImage() {
         return ($this->image) ? '/uploads/' . $this->image : '/no-image.png';
-
     }
 
     public function deleteImage() {
@@ -156,5 +155,13 @@ class Article extends \yii\db\ActiveRecord
     public function saveArticle() {
         $this->user_id = Yii::$app->user->id;
         return $this->save();
+    }
+
+    public function getComments() {
+        return $this->hasMany(Comment::className(), ['article_id'=>'id']);
+    }
+
+    public function getArticleComments() {
+        return $this->getComments()->where(['status'=>1])->all();
     }
 }

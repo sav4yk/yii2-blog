@@ -41,13 +41,7 @@ use yii\helpers\Url;
                         </div>
                     </div>
                 </article>
-                <div class="top-comment"><!--top comment-->
-                    <img src="/public/images/comment.jpg" class="pull-left img-circle" alt="">
-                    <h4>Rubel Miah</h4>
 
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy hello ro mod tempor
-                        invidunt ut labore et dolore magna aliquyam erat.</p>
-                </div><!--top comment end-->
                 <div class="row"><!--blog next previous-->
                     <div class="col-md-6">
                         <div class="single-blog-box">
@@ -82,104 +76,12 @@ use yii\helpers\Url;
                         </div>
                     </div>
                 </div><!--blog next previous end-->
-                <div class="related-post-carousel"><!--related post carousel-->
-                    <div class="related-heading">
-                        <h4>You might also like</h4>
-                    </div>
-                    <div class="items">
-                        <div class="single-item">
-                            <a href="#">
-                                <img src="/public/images/related-post-1.jpg" alt="">
 
-                                <p>Just Wondering at Beach</p>
-                            </a>
-                        </div>
-
-
-                        <div class="single-item">
-                            <a href="#">
-                                <img src="/public/images/related-post-2.jpg" alt="">
-
-                                <p>Just Wondering at Beach</p>
-                            </a>
-                        </div>
-
-
-                        <div class="single-item">
-                            <a href="#">
-                                <img src="/public/images/related-post-3.jpg" alt="">
-
-                                <p>Just Wondering at Beach</p>
-                            </a>
-                        </div>
-
-
-                        <div class="single-item">
-                            <a href="#">
-                                <img src="/public/images/related-post-1.jpg" alt="">
-
-                                <p>Just Wondering at Beach</p>
-                            </a>
-                        </div>
-
-                        <div class="single-item">
-                            <a href="#">
-                                <img src="/public/images/related-post-2.jpg" alt="">
-
-                                <p>Just Wondering at Beach</p>
-                            </a>
-                        </div>
-
-
-                        <div class="single-item">
-                            <a href="#">
-                                <img src="/public/images/related-post-3.jpg" alt="">
-
-                                <p>Just Wondering at Beach</p>
-                            </a>
-                        </div>
-                    </div>
-                </div><!--related post carousel-->
-                <div class="bottom-comment"><!--bottom comment-->
-                    <h4>3 comments</h4>
-
-                    <div class="comment-img">
-                        <img class="img-circle" src="assets/images/comment-img.jpg" alt="">
-                    </div>
-
-                    <div class="comment-text">
-                        <a href="#" class="replay btn pull-right"> Replay</a>
-                        <h5>Rubel Miah</h5>
-
-                        <p class="comment-date">
-                            December, 02, 2015 at 5:57 PM
-                        </p>
-
-
-                        <p class="para">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                            diam nonumy
-                            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-                            voluptua. At vero eos et cusam et justo duo dolores et ea rebum.</p>
-                    </div>
-                </div>
-                <!-- end bottom comment-->
-
-
-                <div class="leave-comment"><!--leave comment-->
-                    <h4>Leave a reply</h4>
-
-
-                    <form class="form-horizontal contact-form" role="form" method="post" action="#">
-
-                        <div class="form-group">
-                            <div class="col-md-12">
-										<textarea class="form-control" rows="6" name="message"
-                                                  placeholder="Write Massage"></textarea>
-                            </div>
-                        </div>
-                        <a href="#" class="btn send-btn">Post Comment</a>
-                    </form>
-                </div><!--end leave comment-->
+             <?= $this->render('/partials/comment', [
+                     'article' => $article,
+                     'comments' => $comments,
+                     'commentForm' => $commentForm
+                ]) ?>
             </div>
             <?= $this->render('/partials/sidebar',[
                 'popular' => $popular,
