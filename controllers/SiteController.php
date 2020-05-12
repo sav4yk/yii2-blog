@@ -65,7 +65,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $data = Article::getAll(2);
+        $data = Article::getAll(4);
         $popular = Article::getPopular();
         $recent = Article::getRecent();
         $categories = Category::getAll();
